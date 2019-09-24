@@ -7,6 +7,11 @@
                 <button class="btn btn-sm btn-green ml-auto"><i class="material-icons">exit_to_app</i></button>
             </div>
             <div class="coins-list bg-light p-2">
+                <div class="text-center p-2">Coins List</div>
+                <coin v-for="i in 3" :key="`coin-teste-${i}`" :name="`coin-teste-${i}`"/>
+            </div>
+            <div class="coins-list bg-light p-2">
+                <div class="text-center p-2">History</div>
             </div>
         </div>
 
@@ -14,14 +19,21 @@
             <div class="wallet-header bg-light p-2 d-flex align-items-center">
             </div>
             <div class="wallet-infos flex-grow-1 p-2" ref="walletInfos">
+                <wallet-loader />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import Coin from '@/components/Coin'
+import WalletLoader from '@/components/WalletLoader'
 export default {
     name: 'Wallet',
+    components: {
+        Coin,
+        WalletLoader
+    },
     data () {
         return {
             currentUser: {
