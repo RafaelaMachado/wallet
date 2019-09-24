@@ -23,6 +23,9 @@ $green: #0b903d;
 .btn.focus, .btn:focus {
     box-shadow: 0 0 0 0.2rem rgba($green, .25) !important;
 }
+.btn-green {
+    color: $green !important;
+}
 .btn-link {
     background-color: $green !important;
     color: #fff !important;
